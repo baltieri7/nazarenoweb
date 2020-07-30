@@ -5,6 +5,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Gerenciador para Igrejas
 
 ## Ferramentas Utilizadas
-### Material UI
-### Reactjs
-
+- Material UI
+- Reactjs
