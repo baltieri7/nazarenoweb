@@ -43,7 +43,7 @@ export default function SimpleCard() {
         <CardContent>
           <Typography className={classes.text}>
             <HouseIcon style={{ fontSize: 60 }} className={classes.icon} />
-            13.500
+            20
         </Typography>
           <Typography className={classes.subtext}>
             Pequenos Grupos
