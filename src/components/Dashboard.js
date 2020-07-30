@@ -22,7 +22,7 @@ import PequenosGrupos from './card/PequenosGrupos';
 import Balanco from './card/Balanco'
 import { Grid } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
-import Grafico from './conteudo/Grafico'
+import Radio from './Page/Radio'
 
 const drawerWidth = 240;
 
@@ -186,7 +186,7 @@ export default function MiniDrawer() {
                         <Balanco />
                     </Grid>
                 </Grid>
-                <Grafico />
+                <Radio />
             </main>
 
         </div>
