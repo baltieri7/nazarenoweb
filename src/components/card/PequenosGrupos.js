@@ -46,7 +46,7 @@ export default function SimpleCard() {
             13.500
         </Typography>
           <Typography className={classes.subtext}>
-            Membros
+            Pequenos Grupos
         </Typography>
         </CardContent>
       </Card>
