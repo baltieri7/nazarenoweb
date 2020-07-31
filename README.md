@@ -7,3 +7,4 @@ Gerenciador para Igrejas
 ## Ferramentas Utilizadas
 - Material UI
 - Reactjs
+- Apex Charts (Biblioteca de gráficos)
