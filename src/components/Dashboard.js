@@ -22,7 +22,12 @@ import PequenosGrupos from './card/PequenosGrupos';
 import Balanco from './card/Balanco'
 import { Grid } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
-import Menuradio from './Page/Menuradio'
+
+import Gmembros from './graficos/Gmembros'
+import Gpequenosg from './graficos/Gpequenosg'
+import Gfinancas from './graficos/Gficancas'
+import Box from '@material-ui/core/Box';
+
 
 const drawerWidth = 240;
 
@@ -94,6 +99,21 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         padding: theme.spacing(3),
     },
+    tgraficos: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: theme.spacing(0, 1),
+    },
+    title: {
+        textAlign: 'left',
+        fontSize: '20px',
+        paddingTop: '2em',
+        marginBottom: '2em',
+    },
+    teste: {
+        backgroundColor: 'red',
+        justifyContent: 'flex-between'
+    }
 }));
 
 export default function MiniDrawer() {
@@ -186,10 +206,31 @@ export default function MiniDrawer() {
                         <Balanco />
                     </Grid>
                 </Grid>
-                <Menuradio />
-            </main>
 
-        </div>
+                <div className={classes.title}>{"Gráficos prévios de cada setor"}</div>
+
+                <Grid
+                    container
+                    direction="row"
+                    justify="space-between"
+                    alignItems="center"
+                >
+                    <Box component="span" m={1}>
+                        <div className={classes.tgraficos}>{"Gráfico de membros."}</div>
+                        <Gmembros />
+                    </Box>
+
+                    <Box component="span" m={1}>
+                        <div className={classes.tgraficos}>{"Gráfico de membros."}</div>
+                        <Gmembros />
+                    </Box>
+                    <Box component="span" m={1}>
+                        <div className={classes.tgraficos}>{"Gráfico de membros."}</div>
+                        <Gmembros />
+                    </Box>
+                </Grid>
+            </main>
+        </div >
 
     );
 }
