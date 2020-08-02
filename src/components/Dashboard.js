@@ -21,13 +21,15 @@ import Membros from './card/Membros';
 import PequenosGrupos from './card/PequenosGrupos';
 import Balanco from './card/Balanco'
 import { Grid } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
 
+import CardContent from '@material-ui/core/CardContent';
+
+import CardMedia from '@material-ui/core/CardMedia';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import Gmembros from './graficos/Gmembros'
 import Gpequenosg from './graficos/Gpequenosg'
 import Gfinancas from './graficos/Gficancas'
-import Box from '@material-ui/core/Box';
-
 
 const drawerWidth = 240;
 
@@ -36,7 +38,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         gridContainer: {
             paddingLeft: '20px',
-            paddingRight: '20px'
+            paddingRight: '20px',
+            maxWidth: 345
         },
         paragraph: {
             paddingBotton: '50px',
@@ -113,6 +116,13 @@ const useStyles = makeStyles((theme) => ({
     teste: {
         backgroundColor: 'red',
         justifyContent: 'flex-between'
+    },
+    cardash: {
+        display: 'flex',
+        gridContainer: {
+            paddingLeft: '20px',
+            paddingRight: '20px',
+        },
     }
 }));
 
@@ -194,40 +204,66 @@ export default function MiniDrawer() {
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                <Grid container spacing={4}>
+                <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} md={4}>
-                        <Membros />
+                        <Card className={classes.cardash}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Membros />
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <PequenosGrupos />
+                        <Card className={classes.cardash}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <PequenosGrupos />
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <Paper elevation={3} />
-                        <Balanco />
+                        <Card className={classes.cardash}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Balanco />
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
                     </Grid>
                 </Grid>
 
                 <div className={classes.title}>{"Gráficos prévios de cada setor"}</div>
 
-                <Grid
-                    container
-                    direction="row"
-                    justify="space-between"
-                    alignItems="center"
-                >
-                    <Box component="span" m={1}>
-                        <div className={classes.tgraficos}>{"Gráfico de membros."}</div>
-                        <Gmembros />
-                    </Box>
-
-                    <Box component="span" m={1}>
-                        <div className={classes.tgraficos}>{"Gráfico de membros."}</div>
-                        <Gmembros />
-                    </Box>
-                    <Box component="span" m={1}>
-                        <div className={classes.tgraficos}>{"Gráfico de membros."}</div>
-                        <Gmembros />
-                    </Box>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card className={classes.cardash}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Gmembros />
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card className={classes.cardash}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Gmembros />
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card className={classes.cardash}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Gmembros />
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
                 </Grid>
             </main>
         </div >
