@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
 import ChartistGraph from "react-chartist";
 
-const simpleChartData = {
-          labels: ['Jan', 'Fev', 'Mar', 'Abr','Mai','Jun','Jul',
-        'Ago','Set','Out','Nov','Dez'],
-          series: [
-            [800000, 1200000, 1400000, 1300000],
-            [200000, 400000, 500000, 300000],
-            [100000, 200000, 400000, 600000]
-          ]
-
-}
-
-const options = {
-     stackBars: true
-}
-class Chart extends Component {
-
+export default class Pie extends Component{
   render(){
+    let data = {
+      series: [
+      {
+        value:20 ,
+        name:"Serie 1 "
+      },
+      {
+        value: 30,
+        name: "Serie 2"
+      },
+      {
+        value: 50,
+        name: "Series 3"
+      }
+    ]
+    };
+    let options = {
+      donut: false
+    };
+    let type = "Pie";
+
     return(
       <div>
-            <ChartistGraph data={simpleChartData} options={options} type={'Bar'} /> 
+        <ChartistGraph data={data} options={options} type={type} />
       </div>
-
-    )}
-
+    );
+  }
 }
-
-export default Chart;

@@ -22,14 +22,13 @@ import PequenosGrupos from './card/PequenosGrupos';
 import Balanco from './card/Balanco'
 import { Grid } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
-
 import CardContent from '@material-ui/core/CardContent';
-
-import CardMedia from '@material-ui/core/CardMedia';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Gmembros from './graficos/Gmembros'
 import Gpequenosg from './graficos/Gpequenosg'
 import Gfinancas from './graficos/Gficancas'
+import Tvisitantes from './conteudo/Tvisitantes'
+
 
 const drawerWidth = 240;
 
@@ -112,17 +111,22 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '20px',
         paddingTop: '2em',
         marginBottom: '2em',
+
     },
-    teste: {
-        backgroundColor: 'red',
-        justifyContent: 'flex-between'
-    },
+
     cardash: {
         display: 'flex',
+        textAlign: 'left',
         gridContainer: {
             paddingLeft: '20px',
             paddingRight: '20px',
+           
         },
+
+    },
+    visitante:{
+        marginBottom:'2em',
+        paddingTop:'2em',
     }
 }));
 
@@ -233,14 +237,13 @@ export default function MiniDrawer() {
                         </Card>
                     </Grid>
                 </Grid>
-
                 <div className={classes.title}>{"Gráficos prévios de cada setor"}</div>
-
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} md={4}>
                         <Card className={classes.cardash}>
                             <CardActionArea>
                                 <CardContent>
+                                    <div className={classes.theme}>{"Membro"}</div>
                                     <Gmembros />
                                 </CardContent>
                             </CardActionArea>
@@ -250,6 +253,7 @@ export default function MiniDrawer() {
                         <Card className={classes.cardash}>
                             <CardActionArea>
                                 <CardContent>
+                                    <div className={classes.theme}>{"Pequenos grupos"}</div>
                                     <Gpequenosg />
                                 </CardContent>
                             </CardActionArea>
@@ -259,13 +263,19 @@ export default function MiniDrawer() {
                         <Card className={classes.cardash}>
                             <CardActionArea>
                                 <CardContent>
+                                    <div className={classes.theme}>{"Finanças"}</div>
                                     <Gfinancas />
                                 </CardContent>
                             </CardActionArea>
                         </Card>
                     </Grid>
                 </Grid>
+                <div className={classes.visitante}>
+                <Tvisitantes />
+                </div>
             </main>
+
+            
         </div >
 
     );
