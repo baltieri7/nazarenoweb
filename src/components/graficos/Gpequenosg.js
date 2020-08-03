@@ -1,48 +1,30 @@
-import React from "react";
-import Chart from "react-apexcharts";
+import React, { Component } from 'react';
+import ChartistGraph from "react-chartist";
 
+const simpleChartData = {
+          labels: ['Jan', 'Fev', 'Mar', 'Abr','Mai','Jun','Jul',
+        'Ago','Set','Out','Nov','Dez'],
+          series: [
+            [800000, 1200000, 1400000, 1300000],
+            [200000, 400000, 500000, 300000],
+            [100000, 200000, 400000, 600000]
+          ]
 
-class App extends  React.Component{
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      options: {
-        chart: {
-          id: "basic-bar",
-   
-        },
-        xaxis: {
-          categories: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro',
-          'Outubro','Novembro','Dezembro']
-        }
-      },
-      series: [
-        {
-          name: "Doações",
-          data: [30, 40, 45, 50, 49, 60, 70, 91,85, 42, 67, 74]
-        }
-      ]
-    };
-  }
-
-  render() {
-    return (
-      <div className="app">
-        <div className="row">
-          <div className="mixed-chart">
-            <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type="bar"
-              width="400"
-              height="300"
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
 }
 
-export default App;
+const options = {
+     stackBars: true
+}
+class Chart extends Component {
+
+  render(){
+    return(
+      <div>
+            <ChartistGraph data={simpleChartData} options={options} type={'Line'} /> 
+      </div>
+
+    )}
+
+}
+
+export default Chart;

@@ -250,7 +250,7 @@ export default function MiniDrawer() {
                         <Card className={classes.cardash}>
                             <CardActionArea>
                                 <CardContent>
-                                    <Gmembros />
+                                    <Gpequenosg />
                                 </CardContent>
                             </CardActionArea>
                         </Card>
@@ -259,7 +259,7 @@ export default function MiniDrawer() {
                         <Card className={classes.cardash}>
                             <CardActionArea>
                                 <CardContent>
-                                    <Gmembros />
+                                    <Gfinancas />
                                 </CardContent>
                             </CardActionArea>
                         </Card>

@@ -1,71 +1,30 @@
-import React from "react";
-import Chart from "react-apexcharts";
+import React, { Component } from 'react';
+import ChartistGraph from "react-chartist";
 
+const simpleChartData = {
+          labels: ['Jan', 'Fev', 'Mar', 'Abr','Mai','Jun','Jul',
+        'Ago','Set','Out','Nov','Dez'],
+          series: [
+            [800000, 1200000, 1400000, 1300000],
+            [200000, 400000, 500000, 300000],
+            [100000, 200000, 400000, 600000]
+          ]
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      options: {
-        chart: {
-          id: "basic-bar",
-
-        },
-        xaxis: {
-          categories: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro',
-            'Outubro', 'Novembro', 'Dezembro']
-        }
-      },
-      series: [{
-        name: "Desktops",
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-    }],
-      chart: {
-      type: 'line',
-      zoom: {
-        enabled: false
-      }
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      curve: 'straight'
-    },
-    title: {
-      text: 'Product Trends by Month',
-      align: 'left'
-    },
-    grid: {
-      row: {
-        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-        opacity: 0.5
-      },
-    },
-    xaxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-    }
-    };
-  }
-
-  render() {
-    return (
-      <div className="app">
-        <div className="row">
-          <div className="mixed-chart">
-            <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type="line"
-              width="500"
-              height="300"
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
 }
 
-export default App;
+const options = {
+     stackBars: true
+}
+class Chart extends Component {
+
+  render(){
+    return(
+      <div>
+            <ChartistGraph data={simpleChartData} options={options} type={'Bar'} /> 
+      </div>
+
+    )}
+
+}
+
+export default Chart;
